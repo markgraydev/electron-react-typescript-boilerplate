@@ -1,0 +1,31 @@
+{
+  "name": "electron-react-typescript-boilerplate",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/markgraydev/electron-react-typescript-boilerplate.git"
+  },
+  "keywords": [],
+  "author": "Mark Gray",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/markgraydev/electron-react-typescript-boilerplate/issues"
+  },
+  "homepage": "https://github.com/markgraydev/electron-react-typescript-boilerplate#readme",
+  "devDependencies": {
+    "@types/react": "^16.8.23",
+    "@types/react-dom": "^16.8.4",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "ts-lint": "^4.5.1",
+    "typescript": "^3.5.2"
+  },
+  "dependencies": {
+    "electron": "^5.0.6"
+  }
+}
