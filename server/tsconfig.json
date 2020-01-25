@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "noEmitOnError": true,
+    "noImplicitReturns": true,
+    "sourceMap": true,
+    "strict": true,
+    "target": "es6"
+  }
+}

@@ -4,7 +4,21 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "electron server/index.js",
+    "build-client": "webpack --config client/webpack.config.js --env.production=true",
+    "build-client-dev": "webpack --config client/webpack.config.js --env.production=false",
+    "watch-client": "npm run build-client-dev -- --watch",
+    "build-server": "tsc --project server/tsconfig.json",
+    "watch-server": "npm run build-server -- --watch",
+    "build": "npm run build-server && npm run build-client",
+    "build-dev": "npm run build-server && npm run build-client-dev",
+    "lint-server": "tslint --project server/tsconfig.json --format verbose",
+    "lint-client": "tslint --project client/tsconfig.json --format verbose",
+    "lint-server-fix": "npm run lint-server -- --fix",
+    "lint-client-fix": "npm run lint-client -- --fix",
+    "lint": "npm run lint-server && npm run lint-client",
+    "lint-fix": "npm run lint-server-fix && npm run lint-client-fix",
+    "storybook": "start-storybook -p 6006"
   },
   "repository": {
     "type": "git",
@@ -18,14 +32,22 @@
   },
   "homepage": "https://github.com/markgraydev/electron-react-typescript-boilerplate#readme",
   "devDependencies": {
-    "@types/react": "^16.8.23",
-    "@types/react-dom": "^16.8.4",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "ts-lint": "^4.5.1",
-    "typescript": "^3.5.2"
+    "@types/react": "~16.9.19",
+    "@types/react-dom": "~16.9.5",
+    "csp-html-webpack-plugin": "~3.0.4",
+    "html-webpack-plugin": "~3.2.0",
+    "html-webpack-root-plugin": "~0.10.0",
+    "react": "~16.12.0",
+    "react-dom": "~16.12.0",
+    "source-map-loader": "~0.2.4",
+    "ts-loader": "~6.2.1",
+    "tslint": "~6.0.0",
+    "tslint-config": "github:markgraydev/tslint-config",
+    "typescript": "~3.7.5",
+    "webpack": "~4.41.5",
+    "webpack-cli": "~3.3.10"
   },
   "dependencies": {
-    "electron": "^5.0.6"
+    "electron": "~7.1.10"
   }
 }
